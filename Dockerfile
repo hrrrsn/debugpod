@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi9/ubi
 
 RUN yum --disableplugin=subscription-manager install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \ 
     && yum --disableplugin=subscription-manager -y upgrade \
-    && yum --disableplugin=subscription-manager -y install nginx openssh-server openssh-clients openssh rsync \
+    && yum --disableplugin=subscription-manager -y install nginx openssh-server openssh-clients openssh rsync supervisor \
   && yum --disableplugin=subscription-manager clean all \
   && ssh-keygen -A && echo "UsePrivilegeSeparation no" >> /etc/ssh/sshd_config
   
