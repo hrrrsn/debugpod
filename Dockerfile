@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/ubi
+FROM registry.redhat.io/rhel9/support-tools
 
 RUN yum --disableplugin=subscription-manager install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \ 
     && yum --disableplugin=subscription-manager -y upgrade \
