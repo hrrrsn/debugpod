@@ -4,7 +4,8 @@ RUN yum --disableplugin=subscription-manager install -y https://dl.fedoraproject
     && yum --disableplugin=subscription-manager -y upgrade \
     && yum --disableplugin=subscription-manager -y install nginx openssh-server openssh-clients openssh rsync supervisor procps-ng \
   && yum --disableplugin=subscription-manager clean all \
-  && ssh-keygen -A && echo "UsePrivilegeSeparation no" >> /etc/ssh/sshd_config
+  && ssh-keygen -A && echo "UsePrivilegeSeparation no" >> /etc/ssh/sshd_config \
+  && echo "password" | passwd
   
 EXPOSE 80
 
